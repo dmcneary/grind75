@@ -13,7 +13,7 @@ Explanation: There are two ways to climb to the top:
 1. 1 step + 1 step
 2. 2 steps
 
-**Example 2:**
+**Example 2:**  
 Input: `n = 3`  
 Output: `3`  
 Explanation : There are three ways to climb to the top.
@@ -25,7 +25,7 @@ Explanation : There are three ways to climb to the top.
 - 1 <= `n` <= 45
 
 ## Explanation
-We can use a sort of slow + fast pointers solution here; first, we must take care of a few base cases. If there is only one step, there is only one way to climb that first step. Otherwise, we initialize our `fast` and `slow` pointers to `2` and `1` respectively. From there, we can iterate over the range `[3, n]` and reassign the `slow` pointer to the value of the `fast` pointer, after assigning the sum of the values of the two pointers to a `temp` variable. We finally assign the value of the `temp` variable to the `fast` pointer. This is the same basic idea of calculating a Fibonacci sequence in-place, using a loop with no extra memory;
+We can use a sort of slow + fast pointers solution here; first, we must take care of a few base cases. If there is only one step, there is only one way to climb that first step. Otherwise, we initialize our `fast` and `slow` pointers to `2` and `1` respectively. From there, we can iterate over the range `[3, n]` and reassign the `slow` pointer to the value of the `fast` pointer, after assigning the sum of the values of the two pointers to a `temp` variable. We finally assign the value of the `temp` variable to the `fast` pointer. This is the same basic idea of calculating a Fibonacci sequence in-place, using a loop with no extra memory:
 
 ```javascript
 /**

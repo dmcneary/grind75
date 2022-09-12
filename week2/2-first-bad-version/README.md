@@ -16,7 +16,7 @@ call `isBadVersion(5)` -> `true`
 call `isBadVersion(4)` -> `true`  
 Then `4` is the first bad `version`.
 
-**Example 2:**
+**Example 2:**  
 Input: `n = 1, bad = 1`  
 Output: `1`
 
