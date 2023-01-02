@@ -24,6 +24,7 @@ Output: `[]`
 
 ## Explanation
 Binary Trees are a data structure in which each *parent (or root) node* has at most two *child nodes*. In this problem, we are simply swapping the child nodes of each root. Recursion, like with most binary tree problems, works well here:
+
 ```javascript
 /**
  * Definition for a binary tree node.

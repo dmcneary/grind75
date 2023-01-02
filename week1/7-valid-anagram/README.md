@@ -20,6 +20,7 @@ Output: `false`
 
 ## Explanation
 There are a few ways to go about tackling this problem. One rudimentary approach would be to treat each letter in the strings as an element in an array, and compare the two strings as arrays to see if they are alike. Because the order of the letters are not the same in a possible anagram, though, they'll need to be sorted. We first check to see if the lengths of the two strings are different - they cannot be anagrams if they do not have the same length:
+
 ```javascript
 /**
  * @param {string} s
@@ -39,7 +40,8 @@ var isAnagram = function(s, t) {
 };
 ```
 
-While this is concise, and we end up only traversing the letters of the string once during comparison, sorting adds significant overhead to our algorithm. Instead, we can reduce the runtime by utilizing a map. We first iterate over the characters in `s`, adding each one to the map if it doesn't contain the character as a key, and incrementing the value of the character key otherwise. We then perform the same iteration over `t`, except we decremement the value of each matching character key. Finally, we create an `iterator` object from the map's values, and check each value - if any value is greater than zero, that means it's key character was not present in either one of the strings, and we do not have a valid anagram. If every value is 0, we finish the loop and return 0:
+While this is concise, and we end up only traversing the letters of the string once during comparison, sorting adds significant overhead to our algorithm. Instead, we can reduce the runtime by utilizing a map. We first iterate over the characters in `s`, adding each one to the map if it doesn't contain the character as a key, and incrementing the value of the character key otherwise. We then perform the same iteration over `t`, except we decremement the value of each matching character key. Finally, we create an `iterator` object from the map's values, and check each value - if any value is greater than zero, that means it's key character was not present in either one of the strings, and we do not have a valid anagram. If every value is 0, we finish the loop and return `true`:
+
 ```javascript
 /**
  * @param {string} s

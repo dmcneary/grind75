@@ -18,7 +18,7 @@ Output: `10101`
 - Each string does not contain leading zeros except for the zero itself.
 
 ## Explanation
-The `Number.paseInt()` method can take a string and return an integer in a specified radix, but due to the way the `Number` object is represented (as a 64-bit float), we lose precision for very big numbers. Because our constraints indicate that the binary strings could be as long as 10,000 characters, we must account for dealing with very big numbers!
+The `Number.parseInt()` method can take a string and return an integer in a specified radix, but due to the way the `Number` object is represented (as a 64-bit float), we lose precision for very big numbers. Because our constraints indicate that the binary strings could be as long as 10,000 characters, we must account for dealing with very big numbers!
 
 Luckily, JavaScript introduced the `bigint` primitive in ES6, so we can effectively work with arbitrarily large numbers without losing precision. Values can be declared as a `bigint` primitive by using an `n` suffix.
 

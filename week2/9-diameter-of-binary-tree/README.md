@@ -9,9 +9,9 @@ The **diameter** of a binary tree is the **length** of the longest path between 
 The **length** of a path between two nodes is represented by the number of edges between them.
 
 **Example 1:**  
-![Example 1](./diamtree.jpg)
+![Example 1](diamtree.jpg)
 Input: `root = [1,2,3,4,5]`  
-Output: `13`  
+Output: `3`  
 Explanation: 3 is the length of the path `[4,2,1,3]` or `[5,2,1,3]`.
 
 **Example 2:**  
@@ -23,9 +23,8 @@ Output: `1`
 - -100 <= `Node.val` <= 100
 
 ## Explanation
-We need to perform a depth-first search (DFS) of the tree, and keep track of the longest path out of all of the subtrees (since the root may not be a part of the longest path). Instead of recursively calling the `diameterOfBinaryTree()` function, we define a `dfs()` function and recursively call it from inside. This way, we can have a "static" variable to track the maximum length path.
+We need to perform a depth-first search (DFS) of the tree, and keep track of the longest path out of all of the subtrees (since the root may not be a part of the longest path). Instead of recursively calling the `diameterOfBinaryTree()` function, we define a `dfs()` function and recursively call it from inside `diameterOfBinaryTree()`. This way, we can have a "static" variable scoped to the `diameterOfBinaryTree()` body to track the maximum length path.
 
-### Wrapper approach
 ```javascript
 /**
  * Definition for a binary tree node.

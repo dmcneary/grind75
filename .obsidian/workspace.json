@@ -1,0 +1,144 @@
+{
+  "main": {
+    "id": "89b016f465df2273",
+    "type": "split",
+    "children": [
+      {
+        "id": "bd2fb0c49fcfbfcd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5d34bff8ba91e599",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f9659e0f54223c37",
+    "type": "split",
+    "children": [
+      {
+        "id": "88821e6422183170",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "03fda978bdde6bf0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7aaadb37ed09828c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9421ef001ee6ca16",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d56c08a876c7e923",
+    "type": "split",
+    "children": [
+      {
+        "id": "fc57036e934af569",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d36792fffe215744",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "da7241c40bfcf0cf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f58626784b9333d3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d180b71b9b8619ff",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5d34bff8ba91e599",
+  "lastOpenFiles": [
+    "week3/3-max-subarray/README.md",
+    "week3/4-insert-interval/README.md",
+    "week3/2-contains-duplicate/README.md",
+    "week3/1-maximum-depth-of-binary-tree/README.md",
+    "week2/10-middle-of-linked-list/README.md",
+    "week2/9-diameter-of-binary-tree/README.md",
+    "week2/7-majority-element/README.md",
+    "week2/6-reverse-linked-list/README.md",
+    "week2/5-longest-palindrome/README.md",
+    "week2/4-climbing-stairs/README.md"
+  ]
+}

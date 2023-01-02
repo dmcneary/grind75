@@ -25,7 +25,8 @@ Output: `23`
 
 
 ## Explanation
-A simple `O(n)` solution involves using [Kadane's algorithm](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) which is a trivial application of **dynamic programming**. 
+A simple `O(n)` solution involves using [Kadane's algorithm](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) which is a trivial application of **dynamic programming**.
+
 ```javascript
 /**
  * @param {number[]} nums

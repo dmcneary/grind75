@@ -32,6 +32,7 @@ Explanation: The starting pixel is already colored 0, so no changes are made to 
 
 ## Explanation
 **Depth-first search (DFS)** is a method of traversing a graph, starting at a root vertex and traversing to a connected node. The method continues down a path until a terminating condition is reached, then recurses back to the last vertex and continues down a new path if the vertex has additional edges. We can treat the matrix as a graph and use the DFS method to traverse each neighboring cell of the matrix, terminating after we've reached a boundary row/column, or if the cell has a different color:
+
 ```javascript
 /**
  * @param {number[][]} image

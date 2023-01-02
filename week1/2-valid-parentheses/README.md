@@ -35,6 +35,7 @@ A Stack is an abstract data type which serves as a *linear* collection of elemen
 - The element at the top of the stack can be 'popped' off
 
 Stacks are LIFO (last-in, first-out) data stuctures, and are very common in algorithm problems. For instance, a Depth-First Search graph algorithm will almost always use a Stack. Stacks can be implemented as arrays or as linked lists. In JS, arrays aren't primitive types, but instead implemented as `Array` built-in objects. While `Array` objects are not strictly stacks, they do offer `push()` and `pop()` methods and we can use them accordingly:
+
 ```javascript
 /**
  * @param {string} s
@@ -77,6 +78,7 @@ var isValid = function(s) {
 ```
 
 Well...that's pretty ugly. Chaining `if-else if` statements together is generally a bad practice, and can really slow down your code. Luckily, we can utilize logic and `switch` blocks to reduce the verbosity of the above code. We can also use an improved `for...of` loop since JS Strings are `Iterable` objects, and ES6 syntax for variable declarations:
+
 ```javascript
 /**
  * @param {string} s
@@ -114,6 +116,7 @@ const isValid = s => {
 ```
 
 Here's a variation which checks for odd-length strings or strings with less than 2 characters; as well, it changes up the character matching logic a bit, using a regular expression:
+
 ```javascript
 /**
  * @param {string} s

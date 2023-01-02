@@ -24,6 +24,7 @@ Explanation: `2` does not exist in `nums` so return `-1`
 
 ## Explanation
 Binary Search is an essential algorithm to know, and is referenced in many "divide and conquer" type algorithms. We utilize a two-pointer approach, assigning the first to the beginning index of the array and the second to the last index. We check the element at the index average of the two pointers (i.e. (first + last) / 2) - if the element matches the target, we return the index. If not, we check to see if the element at the index is greater than or less than the target and adjust one of the pointers accordingly. Note that binary search relies on a *sorted* array - unsorted arrays are not feasible to search using this approach:
+
 ```javascript
 /**
  * @param {number[]} nums

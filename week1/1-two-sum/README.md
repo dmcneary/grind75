@@ -29,6 +29,7 @@ Output: `[0,1]`
 
 ## Explanation
 The simplest way to go about this is a nested loop: for each element in `nums`, iterate over every other element in `nums` to see if the two elements add up to `target`:
+
 ```javascript
 var twoSum = function(nums, target) {
 	for (var i = 0; i < nums.length; i++) {
@@ -88,6 +89,7 @@ var twoSum = function(nums, target) {
 ```
 
 We can simplify this further by using **ES6** features:
+
 ```javascript
 /**
  * @param {number[]} nums
@@ -109,6 +111,7 @@ const twoSum = (nums, target) => {
 ```
 
 ...but while the `forEach()` method must iterate over every element, a regular `for`-loop allows us to return early if we find the solution:
+
 ```javascript
 /**
  * @param {number[]} nums

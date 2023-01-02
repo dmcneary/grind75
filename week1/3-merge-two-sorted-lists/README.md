@@ -32,6 +32,7 @@ This problem is a great introduction to recursion. I'll also show a way to solve
 
 ### With recursion: 
 We first handle the edge cases - if one list is empty (`null`) we immediately return the other list (which could also be empty, in which case two concatenated empty lists is the same as one empty list). Otherwise, we compare the values at the head of the two lists. If `list1.val` is less than or equal to `list2.val`, we can continue recursing; otherwise, we need to return a recursive call with the order of the arguments swapped. When the stack empties to the original call, we return the modified `list1`.
+
 ```javascript
 /**
  * Definition for singly-linked list.
@@ -113,29 +114,30 @@ return 4 ->
 
 ### With iteration:
 As with the recursive solution, we first handle cases where one or both lists may be empty. We'll want to keep track of the head of the list, since the problem asks us to return it; because objects (like `ListNode`s, for example) that are assigned to new variables are *passed by reference*, we must construct a new `ListNode` object and assign it to `head`, then reference `head` by our iterative variable `curr`. Simply assigning `head` to one of the list arguments won't work. Then, we iterate through the lists, tacking `ListNode`s onto `curr` from either list depending on the result of comparing their values, until we reach the end of either list. Finally, if there are remaining elements in one of the lists we can safely assume that they are greater than all of the elements in our `curr` list (since each list has already been sorted), and we can tack the entire remainder onto `curr`. Remember, `head` refers to a "seed" `ListNode` and we started the merge at `head.next`, so we advance `head` to `head.next` before returning it:
+
 ```javascript
 var mergeTwoLists = function (list1, list2) {
 	if (list1 === null) return list2;
 	if (list2 === null) return list1;
     
-  let head = new ListNode();
-  let curr = head;
+	let head = new ListNode();
+	let curr = head;
 
 	while (list1 && list2) {
 		if (list1.val <= list2.val) {
 			curr.next = list1;
-      list1 = list1.next;
+		    list1 = list1.next;
 		} else {
 			curr.next = list2;
-      list2 = list2.next;
+		    list2 = list2.next;
 		}
         
-    curr = curr.next;
+	    curr = curr.next;
 	}
 
 	curr.next = list1 || list2;
-  head = head.next;
+	head = head.next;
 	
-  return head;
+	return head;
 };
 ```

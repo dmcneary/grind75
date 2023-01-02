@@ -27,6 +27,7 @@ Explanation: `s` is an empty string `""` after removing non-alphanumeric charact
 
 ## Explanation
 We can accomplish this task by using a two-pointer approach, but first we must prepare the string for testing. To do this, we strip out all whitespace and non-alphanumeric characters, and convert all characters to lower-case. Then, we assign our two pointers to the indexes of the first and last characters in the converted string. We then iterate over the characters in a `while`-loop, until the left pointer catches up to the right. In each iteration, we check if the characters at the indexes that the pointers are assigned to are equal; if not, immediately return `false`. If the loop completes, then all characters must match and we return `true`. Note that because the loop terminates when the start pointer is greaterthan or equal to than the end pointer, it doesn't matter if the converted string has an odd or even length:
+
 ```javascript
 /**
  * @param {string} s
