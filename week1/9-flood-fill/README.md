@@ -1,7 +1,9 @@
 # Flood Fill
+
 Source: [Leetcode](https://leetcode.com/problems/flood-fill)
 
 ## Description
+
 An image is represented by an `m x n` integer grid image where `image[i][j]` represents the pixel value of the image.
 
 You are also given three integers `sr`, `sc`, and `color`. You should perform a **flood fill** on the image starting from the pixel `image[sr][sc]`.
@@ -23,6 +25,7 @@ Output: `[[0,0,0],[0,0,0]]`
 Explanation: The starting pixel is already colored 0, so no changes are made to the `image`.
 
 **Constraints:**
+
 - `m == image.length`
 - `n == image[i].length`
 - 1 <= `m`, `n` <= 50
@@ -31,6 +34,7 @@ Explanation: The starting pixel is already colored 0, so no changes are made to 
 - 0 <= `sc` < `n`
 
 ## Explanation
+
 **Depth-first search (DFS)** is a method of traversing a graph, starting at a root vertex and traversing to a connected node. The method continues down a path until a terminating condition is reached, then recurses back to the last vertex and continues down a new path if the vertex has additional edges. We can treat the matrix as a graph and use the DFS method to traverse each neighboring cell of the matrix, terminating after we've reached a boundary row/column, or if the cell has a different color:
 
 ```javascript
@@ -42,18 +46,18 @@ Explanation: The starting pixel is already colored 0, so no changes are made to 
  * @return {number[][]}
  */
 var floodFill = function (image, sr, sc, color) {
-	let oldColor = image[sr][sc];
-	if (color !== oldColor) dfs(image, sr, sc, oldColor, color);
-	return image;
+ let oldColor = image[sr][sc];
+ if (color !== oldColor) dfs(image, sr, sc, oldColor, color);
+ return image;
 };
 
 var dfs = function (image, r, c, color, newColor) {
-	if (image[r][c] === color) {
-		image[r][c] = newColor;
-		if (r >= 1) dfs(image, r - 1, c, color, newColor);
-		if (c >= 1) dfs(image, r, c - 1, color, newColor);
-		if (r + 1 < image.length) dfs(image, r + 1, c, color, newColor);
-		if (c + 1 < image[0].length) dfs(image, r, c + 1, color, newColor);
-	}
+ if (image[r][c] === color) {
+  image[r][c] = newColor;
+  if (r >= 1) dfs(image, r - 1, c, color, newColor);
+  if (c >= 1) dfs(image, r, c - 1, color, newColor);
+  if (r + 1 < image.length) dfs(image, r + 1, c, color, newColor);
+  if (c + 1 < image[0].length) dfs(image, r, c + 1, color, newColor);
+ }
 };
 ```

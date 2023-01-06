@@ -1,7 +1,9 @@
 # Balanced Binary Tree
+
 Source: [Leetcode](https://leetcode.com/problems/balanced-binary-tree/)
 
 ## Description
+
 Given a binary tree, determine if it is height-balanced.
 
 For this problem, a height-balanced binary tree is defined as: a binary tree in which the left and right subtrees of *every* node differ in height by no more than 1.
@@ -21,10 +23,12 @@ Input: `root = []`
 Output: `true`
 
 **Constraints:**
+
 - The number of nodes in the tree is in the range [0, 5000].
 - -10^4 <= `Node.val` <= 10^4
 
 ## Explanation
+
 A twist on a DFS approach, we must keep track of a count, and return a boolean. This requires a helper function to keep track of the height of the tree:
 
 ```javascript
@@ -42,26 +46,26 @@ A twist on a DFS approach, we must keep track of a count, and return a boolean. 
  */
 var isBalanced = function (root) {
 
-	if (!root) return true;
+ if (!root) return true;
 
-	let l = height(root.left),
-		r = height(root.right);
+ let l = height(root.left),
+  r = height(root.right);
 
-	if (Math.abs(l - r) > 1) return false;
+ if (Math.abs(l - r) > 1) return false;
 
-	return isBalanced(root.left) && isBalanced(root.right);
+ return isBalanced(root.left) && isBalanced(root.right);
 
 };
 
 var height = function (root) {
 
-	if (!root) {
-		return 0;
-	} else if (!root.left && !root.right) {
-		return 1;
-	}
+ if (!root) {
+  return 0;
+ } else if (!root.left && !root.right) {
+  return 1;
+ }
 
-	return Math.max(1 + height(root.left), 1 + height(root.right));
+ return Math.max(1 + height(root.left), 1 + height(root.right));
 
 }
 ```

@@ -1,7 +1,9 @@
 # Two Sum
+
 Source: [Leetcode](https://leetcode.com/problems/two-sum)
 
 ## Description
+
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -22,23 +24,25 @@ Input: `nums = [3,3], target = 6`
 Output: `[0,1]`
 
 **Constraints:**  
+
 - 2 <= `nums.length` <= 10^4
 - -10^9 <= `nums[i]` <= 10^9
 - -10^9 <= `target` <= 10^9
 - **Only one valid answer exists.**
 
 ## Explanation
+
 The simplest way to go about this is a nested loop: for each element in `nums`, iterate over every other element in `nums` to see if the two elements add up to `target`:
 
 ```javascript
 var twoSum = function(nums, target) {
-	for (var i = 0; i < nums.length; i++) {
-		for (var j = i + 1; j < nums.length; j++) {
-			if (nums[i] + nums[j] === target) {
-				return [i, j];
-			}
-		}
-	}
+ for (var i = 0; i < nums.length; i++) {
+  for (var j = i + 1; j < nums.length; j++) {
+   if (nums[i] + nums[j] === target) {
+    return [i, j];
+   }
+  }
+ }
 }
 ```
 
@@ -53,16 +57,16 @@ A **Map** (aka **dictionary**, **associative array**, or **symbol table**) is an
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-	var map = {};
+ var map = {};
 
-	for (var i = 0; i < nums.length; i++) {
-		var difference = target - nums[i];
-		if (map[difference] !== undefined) {
-			return [map[difference], i];
-		} else {
-			map[nums[i]] = i;
-		}
-	}
+ for (var i = 0; i < nums.length; i++) {
+  var difference = target - nums[i];
+  if (map[difference] !== undefined) {
+   return [map[difference], i];
+  } else {
+   map[nums[i]] = i;
+  }
+ }
 }
 ```
 
@@ -75,16 +79,16 @@ Unfortunately, JS objects have limitations which make using them in place of a d
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-	var map = new Map();
+ var map = new Map();
 
-	for (var i = 0; i < nums.length; i++) {
-		var difference = target - nums[i];
-		if (map.has(difference)) {
-			return [map.get(difference), i];
-		} else {
-			map.set(nums[i], i);
-		}
-	}
+ for (var i = 0; i < nums.length; i++) {
+  var difference = target - nums[i];
+  if (map.has(difference)) {
+   return [map.get(difference), i];
+  } else {
+   map.set(nums[i], i);
+  }
+ }
 }
 ```
 
@@ -97,16 +101,16 @@ We can simplify this further by using **ES6** features:
  * @return {number[]}
  */
 const twoSum = (nums, target) => {
-	const map = new Map();
-	let res;
+ const map = new Map();
+ let res;
 
-	nums.forEach((num, i) => {
-		const diff = target - num;
-		if (map.has(diff)) res = [map.get(diff), i];
-		else map.set(num, i);
-	});
+ nums.forEach((num, i) => {
+  const diff = target - num;
+  if (map.has(diff)) res = [map.get(diff), i];
+  else map.set(num, i);
+ });
 
-	return res;
+ return res;
 }
 ```
 
@@ -119,12 +123,12 @@ const twoSum = (nums, target) => {
  * @return {number[]}
  */
 const twoSum = (nums, target) => {
-	const map = new Map();
+ const map = new Map();
 
-	for (let i = 0; i < nums.length; i++) {
-		const diff = target - nums[i];
-		if (map.has(diff)) return [map.get(diff), i];
-		map.set(nums[i], i);
-	}
+ for (let i = 0; i < nums.length; i++) {
+  const diff = target - nums[i];
+  if (map.has(diff)) return [map.get(diff), i];
+  map.set(nums[i], i);
+ }
 }
 ```

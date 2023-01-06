@@ -1,7 +1,9 @@
 # Valid Anagram
+
 Source: [Leetcode](https://leetcode.com/problems/valid-anagram)
 
 ## Description
+
 Given two strings `s` and `t`, return *`true` if `t` is an anagram of `s`, and `false` otherwise*.
 
 An **Anagram** is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
@@ -15,10 +17,12 @@ Input: `s = "rat", t = "car"`
 Output: `false`
 
 **Constraints:**
+
 - 1 <= `s.length`, `t.length` <= 5 * 10^4
 - `s` and `t` consist of lowercase English letters.
 
 ## Explanation
+
 There are a few ways to go about tackling this problem. One rudimentary approach would be to treat each letter in the strings as an element in an array, and compare the two strings as arrays to see if they are alike. Because the order of the letters are not the same in a possible anagram, though, they'll need to be sorted. We first check to see if the lengths of the two strings are different - they cannot be anagrams if they do not have the same length:
 
 ```javascript
@@ -49,34 +53,34 @@ While this is concise, and we end up only traversing the letters of the string o
  * @return {boolean}
  */
 var isAnagram = function (s, t) {
-	if (s.length !== t.length) return false;
-	const map = new Map();
+ if (s.length !== t.length) return false;
+ const map = new Map();
 
-	for (const c of s) {
-		if (map.has(c)) {
-			map.set(c, map.get(c) + 1);
-		} else {
-			map.set(c, 1);
-		}
-	}
+ for (const c of s) {
+  if (map.has(c)) {
+   map.set(c, map.get(c) + 1);
+  } else {
+   map.set(c, 1);
+  }
+ }
 
-	for (const c of t) {
-		if (map.has(c)) {
-			map.set(c, map.get(c) - 1);
-		} else {
-			map.set(c, 1);
-		}
-	}
+ for (const c of t) {
+  if (map.has(c)) {
+   map.set(c, map.get(c) - 1);
+  } else {
+   map.set(c, 1);
+  }
+ }
 
-	let qtys = map.values();
-	let val = qtys.next();
-	while (!val.done) {
-		if (val.value > 0) {
-			return false;
-		}
-		val = qtys.next();
-	}
+ let qtys = map.values();
+ let val = qtys.next();
+ while (!val.done) {
+  if (val.value > 0) {
+   return false;
+  }
+  val = qtys.next();
+ }
 
-	return true;
+ return true;
 };
 ```

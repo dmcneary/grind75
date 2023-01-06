@@ -1,7 +1,9 @@
 # Invert Binary Tree
+
 Source: [Leetcode](https://leetcode.com/problems/valid-palindrome)
 
 ## Description
+
 Given the `root` of a binary tree, invert the tree, and *return its root*.
 
 **Example 1:**  
@@ -19,10 +21,12 @@ Input: `root = []`
 Output: `[]`
 
 **Constraints:**
+
 - The number of nodes in the tree is in the range [0, 100].
 - -100 <= `Node.val` <= 100
 
 ## Explanation
+
 Binary Trees are a data structure in which each *parent (or root) node* has at most two *child nodes*. In this problem, we are simply swapping the child nodes of each root. Recursion, like with most binary tree problems, works well here:
 
 ```javascript
@@ -39,14 +43,14 @@ Binary Trees are a data structure in which each *parent (or root) node* has at m
  * @return {TreeNode}
  */
 var invertTree = function (root) {
-	if (!root) return null;
+ if (!root) return null;
 
-	let temp = (root.left) ? root.left : null;;
-	root.left = (root.right) ? root.right : null;
-	root.right = temp;
+ let temp = (root.left) ? root.left : null;;
+ root.left = (root.right) ? root.right : null;
+ root.right = temp;
 
-	invertTree(root.left);
-	invertTree(root.right);
-	return root;
+ invertTree(root.left);
+ invertTree(root.right);
+ return root;
 };
 ```

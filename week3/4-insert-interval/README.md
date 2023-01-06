@@ -1,7 +1,9 @@
 # Insert Interval
+
 Source: [Leetcode](https://leetcode.com/problems/insert-interval/)
 
 ## Description
+
 You are given an array of non-overlapping intervals `intervals` where `intervals[i] = [starti, endi]` represent the start and the end of the `ith` interval and `intervals` is sorted in ascending order by `starti`. You are also given an interval `newInterval = [start, end]` that represents the start and end of another interval.
 
 Insert `newInterval` into `intervals` such that `intervals` is still sorted in ascending order by `starti` and `intervals` still does not have any overlapping intervals (merge overlapping intervals if necessary).
@@ -18,15 +20,16 @@ Output: `[[1,2],[3,10],[12,16]]`
 Explanation: The new interval `[4,8]` overlaps with `[3,5],[6,7],[8,10]`.
 
 **Constraints:**
--   0 <= `intervals.length` <= 10^4
--   `intervals[i].length` = 2
--   0 <= `start[i]` <= `end[i]` <= 10^5
--   `intervals` is sorted by `start[i]` in **ascending** order.
--   `newInterval.length` = 2
--   0 <= `start` <= `end` <= 10^5
 
+- 0 <= `intervals.length` <= 10^4
+- `intervals[i].length` = 2
+- 0 <= `start[i]` <= `end[i]` <= 10^5
+- `intervals` is sorted by `start[i]` in **ascending** order.
+- `newInterval.length` = 2
+- 0 <= `start` <= `end` <= 10^5
 
 ## Explanation
+
 First, insert the `newInterval` into `intervals` - the `newInterval` can either be appended and then `intervals` is sorted, or `intervals` may be traversed until the correct index for `newInterval` is found and `newInterval` is inserted using `Array.splice()`.
 
 Then, merge any overlapping intervals in-place and return `intervals` this is performed by comparing adjacent elements and checking if there is an overlap; if so, `Array.splice()` is used once more to delete the redundant element:

@@ -1,7 +1,9 @@
 # Diameter of Binary Tree
+
 Source: [Leetcode](https://leetcode.com/problems/diameter-of-binary-tree/)
 
 ## Description
+
 Given the `root` of a binary tree, return *the length of the **diameter** of the tree*.
 
 The **diameter** of a binary tree is the **length** of the longest path between any two nodes in a tree. This path may or may not pass through the `root`.
@@ -19,10 +21,12 @@ Input: `root = [1,2]`
 Output: `1`
 
 **Constraints:**  
+
 - The number of nodes in the tree is in the range [1, 10^4].
 - -100 <= `Node.val` <= 100
 
 ## Explanation
+
 We need to perform a depth-first search (DFS) of the tree, and keep track of the longest path out of all of the subtrees (since the root may not be a part of the longest path). Instead of recursively calling the `diameterOfBinaryTree()` function, we define a `dfs()` function and recursively call it from inside `diameterOfBinaryTree()`. This way, we can have a "static" variable scoped to the `diameterOfBinaryTree()` body to track the maximum length path.
 
 ```javascript

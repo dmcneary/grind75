@@ -1,7 +1,9 @@
 # Linked List Cycle
+
 Source: [Leetcode](https://leetcode.com/problems/linked-list-cycle/)
 
 ## Description
+
 Given `head`, the head of a linked list, determine if the linked list has a cycle in it.
 
 There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the `next` pointer. Internally, `pos` is used to denote the index of the node that tail's `next` pointer is connected to. Note that `pos` is not passed as a parameter.
@@ -27,14 +29,17 @@ Output: `false`
 Explanation: There is no cycle in the linked list.
 
 **Constraints:**
+
 - The number of nodes in the tree is in the range [0, 10^4].
 - -10^5 <= `Node.val` <= 10^5
 - `pos` is `-1` or a **valid index** in the linked-list.
 
 ## Explanation
+
 A simple approach would be to add each node to an array, and traverse the list, checking to see if the array contains to node. However, we can also use what is known as a **fast-slow pointer** approach, which utilizes constant memory:
 
-### With an array:
+### With an array
+
 ```javascript
 /**
  * Definition for singly-linked list.
@@ -65,7 +70,8 @@ var hasCycle = function(head) {
 };
 ```
 
-### With fast-slow pointers:
+### With fast-slow pointers
+
 ```javascript
 /**
  * Definition for singly-linked list.
@@ -80,13 +86,13 @@ var hasCycle = function(head) {
  * @return {boolean}
  */
 var hasCycle = function (head) {
-	let fast = head
-	let slow = head
-	while (fast && fast.next) {
-		fast = fast.next.next
-		slow = slow.next
-		if (fast === slow) return true
-	}
-	return false
+ let fast = head
+ let slow = head
+ while (fast && fast.next) {
+  fast = fast.next.next
+  slow = slow.next
+  if (fast === slow) return true
+ }
+ return false
 };
 ```

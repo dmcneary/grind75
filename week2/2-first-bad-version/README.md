@@ -1,7 +1,9 @@
 # First Bad Version
+
 Source: [Leetcode](https://leetcode.com/problems/first-bad-version/)
 
 ## Description
+
 You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
 
 Suppose you have `n` versions `[1, 2, ..., n]` and you want to find out the first bad one, which causes all the following ones to be bad.
@@ -21,9 +23,11 @@ Input: `n = 1, bad = 1`
 Output: `1`
 
 **Constraints:**  
+
 - 1 <= `bad` <= `n` <= 2^31 - 1
 
 ## Explanation
+
 We can use a binary search approach to minimize the number of calls to the API, from `O(n)` using linear search to `O(log n)` calls using this strategy:
 
 ```javascript
@@ -42,20 +46,20 @@ We can use a binary search approach to minimize the number of calls to the API, 
  * @return {function}
  */
 var solution = function (isBadVersion) {
-	/**
-	 * @param {integer} n Total versions
-	 * @return {integer} The first bad version
-	 */
-	return function (n) {
-		let left = 1, right = n;
+ /**
+  * @param {integer} n Total versions
+  * @return {integer} The first bad version
+  */
+ return function (n) {
+  let left = 1, right = n;
 
-		while (left < right) {
-			let mid = (left + right) >>> 1;
-			if (isBadVersion(mid)) {
-				right = mid
-			} else left = mid + 1;
-		}
-		return right;
-	};
+  while (left < right) {
+   let mid = (left + right) >>> 1;
+   if (isBadVersion(mid)) {
+    right = mid
+   } else left = mid + 1;
+  }
+  return right;
+ };
 };
 ```
